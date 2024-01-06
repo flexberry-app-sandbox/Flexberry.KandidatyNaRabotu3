@@ -1,0 +1,122 @@
+﻿{
+  "name": "IISKandidaty_na_rabotuТЧГрафСобес",
+  "modelName": "i-i-s-kandidaty-na-rabotu-т-ч-граф-собес",
+  "className": "ТЧГрафСобес",
+  "nameSpace": "IIS.Kandidaty_na_rabotu",
+  "parentModelName": null,
+  "parentClassName": null,
+  "attrs": [],
+  "belongsTo": [
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "планирСобес",
+      "relatedTo": "i-i-s-kandidaty-na-rabotu-планир-собес",
+      "inverse": null
+    },
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "графСобес",
+      "relatedTo": "i-i-s-kandidaty-na-rabotu-граф-собес",
+      "inverse": "тЧГрафСобес"
+    }
+  ],
+  "hasMany": [],
+  "projections": [
+    {
+      "name": "ТЧГрафСобесE",
+      "modelName": "i-i-s-kandidaty-na-rabotu-т-ч-граф-собес",
+      "attrs": [],
+      "belongsTo": [
+        {
+          "lookupValue": "ДатаПланСобес",
+          "lookupValueField": "датаПланСобес",
+          "relationName": "ПланирСобес",
+          "belongsTo": [
+            {
+              "lookupValue": null,
+              "lookupValueField": null,
+              "relationName": "ПланирСобес.РегистАнкеты",
+              "belongsTo": [
+                {
+                  "lookupValue": null,
+                  "lookupValueField": null,
+                  "relationName": "ПланирСобес.РегистАнкеты.ВакантДолжн",
+                  "belongsTo": [],
+                  "hidden": false,
+                  "attrs": [
+                    {
+                      "name": "должность",
+                      "caption": "Вакантная должность",
+                      "hidden": false,
+                      "index": 6
+                    }
+                  ],
+                  "index": -1,
+                  "type": null,
+                  "caption": "",
+                  "name": "вакантДолжн",
+                  "relatedTo": "i-i-s-kandidaty-na-rabotu-вакант-должн",
+                  "inverse": null
+                }
+              ],
+              "hidden": false,
+              "attrs": [
+                {
+                  "name": "фИОКандид",
+                  "caption": "ФИО кандидата",
+                  "hidden": false,
+                  "index": 5
+                }
+              ],
+              "index": -1,
+              "type": null,
+              "caption": "",
+              "name": "регистАнкеты",
+              "relatedTo": "i-i-s-kandidaty-na-rabotu-регист-анкеты",
+              "inverse": null
+            }
+          ],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "иметьПриСебе",
+              "caption": "Дата планирования собеседования",
+              "hidden": true,
+              "index": 1
+            },
+            {
+              "name": "время",
+              "caption": "Время собеседования",
+              "hidden": false,
+              "index": 2
+            },
+            {
+              "name": "кабинет",
+              "caption": "Номер кабинета проведения собеседования",
+              "hidden": false,
+              "index": 3
+            },
+            {
+              "name": "этаж",
+              "caption": "Этаж",
+              "hidden": false,
+              "index": 4
+            }
+          ],
+          "index": 0,
+          "type": "standard",
+          "caption": "Дата планирования собеседования",
+          "name": "планирСобес",
+          "relatedTo": "i-i-s-kandidaty-na-rabotu-планир-собес",
+          "inverse": null
+        }
+      ],
+      "hasMany": []
+    }
+  ],
+  "stored": true,
+  "offline": true,
+  "external": false
+}
